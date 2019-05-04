@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# contributor: L. Guruprasad <lgp171188@gmail.com>
+# name: main_class
+# key: mc
+# --
+public class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` ${1:extends ${2:BaseClass} }${3:implements ${4:interface} }{
+       ${5:
+       public `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`($6) {
+              
+       }
+       }${7:public static void main(String[] args) ${8:throws ${9:Exception} }{
+                  $0
+       }
+}}
