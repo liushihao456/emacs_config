@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: while
-# key: while
+# key: w
 # --
-while (${1:condition}) {
+while (${1:condition}) ${2:{
       $0
-}
+}}
