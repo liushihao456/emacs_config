@@ -1,5 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: lambda
-# key: ld
-# --
-(${1:args}) -> ${2:{${3:expression}}}
