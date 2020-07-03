@@ -54,7 +54,7 @@
 
 ;; regular expression to identify a valid function definition in
 ;; python and match it's name and arguments
-(defconst sphinx-doc-fun-regex "^ *def \\([a-zA-Z0-9_]+\\)(\\(\\(?:.\\|\n\\)*\\)):$")
+(defconst sphinx-doc-fun-regex "^\s*def \\([a-zA-Z0-9_]+\\)\s*(\\(\\(?:.\\|\n\\)*\\)):$")
 
 ;; regexes for beginning and end of python function definitions
 (defconst sphinx-doc-fun-beg-regex "def")
@@ -418,14 +418,13 @@ per the requirement of Sphinx documentation generator."
         (let ((indent (+ (sphinx-doc-current-indent) sphinx-doc-python-indent))
               (old-ds (sphinx-doc-existing))
               (new-ds (sphinx-doc-fndef->doc fd)))
-          (progn
             (when old-ds (sphinx-doc-kill-old-doc indent))
             (sphinx-doc-insert-doc
              (if old-ds
                  (sphinx-doc-merge-docs old-ds new-ds)
                new-ds))
             (sphinx-doc-indent-doc indent)
-            (search-forward "\"\"\""))))))
+            (search-forward "\"\"\"")))))
 
 
 (defvar sphinx-doc-mode-map
